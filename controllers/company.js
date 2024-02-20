@@ -10,7 +10,7 @@ export function createCompanyLoader() {
     // ids =                      ["a", "d", "b", "c"]
     // companies                  ["A", "D", "B", "C"]
     // select * from company ==>  ["A", "B", "C", "D"]
-    const companies = await knex.table("company").select().whereIn("id", ids);
+    const companies = await knex.table("User").select().whereIn("id", ids);
     return ids.map((id) => companies.find((company) => company.id === id));
   });
 }
